@@ -13,7 +13,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: ["http://mern-api-frontend-one.vercel.app"], // Adjust as needed for your frontend
+  origin: ["https://mern-api-frontend-one.vercel.app"], // Adjust as needed for your frontend
   methods: ['POST', 'GET'],
   credentials: true
 }));

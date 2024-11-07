@@ -17,7 +17,7 @@ const LogIn = () => {
     setErrorMessage(''); // Reset error message on submit
     setSuccessMessage(''); // Reset success message on submit
 
-    axios.post('http://localhost:3000/api/login', { 
+    axios.post('https://mern-api-wine.vercel.app/api/login', { 
       email,
       password,
     })

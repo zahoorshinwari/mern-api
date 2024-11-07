@@ -27,7 +27,7 @@ const SignUp = () => {
       return;
     }
 
-    axios.post('http://localhost:3000/api/signup', { 
+    axios.post('https://mern-api-wine.vercel.app/api/signup', { 
       username,
       profession,
       phoneNumber,

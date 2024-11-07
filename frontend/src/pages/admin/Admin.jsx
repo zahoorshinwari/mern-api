@@ -115,7 +115,7 @@ const Admin = () => {
     setSuccessMessage('');
 
     // Replace with your admin login API endpoint
-    axios.post('http://localhost:3000/api/admin/login', {
+    axios.post('https://mern-api-wine.vercel.app/api/admin/login', {
       email,
       password,
     })

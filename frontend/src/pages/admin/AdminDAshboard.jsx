@@ -130,7 +130,7 @@ const AdminDashboard = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/admin/verifyAdmin')
+    axios.get('https://mern-api-wine.vercel.app/api/admin/verifyAdmin')
       .then(res => {
         if (!res.data.status) {
           navigate('/admin');
@@ -141,7 +141,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/api/users');
+        const response = await axios.get('https://mern-api-wine.vercel.app/api/users');
         setUsers(response.data.users);
         setLoading(false);
       } catch (error) {
@@ -155,7 +155,7 @@ const AdminDashboard = () => {
 
   const approveUser = async (email) => {
     try {
-      await axios.post('http://localhost:3000/api/admin/approve', { email });
+      await axios.post('https://mern-api-wine.vercel.app/api/admin/approve', { email });
       setUsers(users.map(user => 
         user.email === email ? { ...user, approved: true, isApproved: true } : user
       ));
@@ -166,7 +166,7 @@ const AdminDashboard = () => {
 
   const rejectUser = async (email) => {
     try {
-      await axios.post('http://localhost:3000/api/admin/reject', { email });
+      await axios.post('https://mern-api-wine.vercel.app/api/admin/reject', { email });
       setUsers(users.map(user => 
         user.email === email ? { ...user, approved: false, isApproved: false } : user
       ));
@@ -178,7 +178,7 @@ const AdminDashboard = () => {
 
   const logoutAdmin = async () => {
     try {
-      await axios.post('http://localhost:3000/api/admin/logout');
+      await axios.post('https://mern-api-wine.vercel.app/api/admin/logout');
       navigate('/admin'); // Redirect to admin login page after logout
     } catch (error) {
       setError('Failed to logout. Please try again later.');

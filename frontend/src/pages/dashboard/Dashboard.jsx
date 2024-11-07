@@ -36,7 +36,7 @@ const Dashboard = () => {
   axios.defaults.withCredentials = true;
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/verify')
+    axios.get('https://mern-api-wine.vercel.app/api/verify')
       .then(res => {
         if (!res.data.status) {
           navigate('/login');
@@ -45,7 +45,7 @@ const Dashboard = () => {
   }, [navigate]);
 
   useEffect(() => {
-    axios.get('http://localhost:3000/api/companies')
+    axios.get('https://mern-api-wine.vercel.app/api/companies')
       .then(res => {
         setCustomerCount(res.data.companies.length);
       })
@@ -53,7 +53,7 @@ const Dashboard = () => {
         console.error('Error fetching companies:', err);
       });
 
-    axios.get('http://localhost:3000/api/products')
+    axios.get('https://mern-api-wine.vercel.app/api/products')
       .then(res => {
         setProductCount(res.data.products.length);
       })
@@ -61,7 +61,7 @@ const Dashboard = () => {
         console.error('Error fetching products:', err);
       });
 
-    axios.get('http://localhost:3000/api/favorites')
+    axios.get('https://mern-api-wine.vercel.app/api/favorites')
       .then(res => {
         setFavoritesCount(res.data.favorites.length);
       })

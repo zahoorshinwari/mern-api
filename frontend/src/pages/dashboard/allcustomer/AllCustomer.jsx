@@ -9,7 +9,7 @@ const AllCustomer = () => {
     useEffect(() => {
         const fetchCompanies = async () => {
             try {
-                const response = await axios.get('http://mern-api-wine.vercel.app/api/companies');
+                const response = await axios.get('https://mern-api-wine.vercel.app/api/companies');
                 setData(response.data);
             } catch (err) {
                 setError(err.message);
