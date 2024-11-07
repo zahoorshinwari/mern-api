@@ -30,3 +30,7 @@ connectDB().then(() => {
     console.log(`Server is running on http://localhost:${process.env.PORT}`);
   });
 });
+
+app.get('/', (req, res) => {
+  res.send("hello world")
+})
