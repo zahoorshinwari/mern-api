@@ -12,7 +12,7 @@ const Users = () => {
     useEffect(() => {
         const fetchUsers = async () => {
           try {
-            const response = await axios.get('http://localhost:3000/api/users', { withCredentials: true });
+            const response = await axios.get('https://mern-api-wine.vercel.app/api/users', { withCredentials: true });
             
             setUsers(response.data.users);
             setLoading(false);
